@@ -1,42 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace DMG
-{
-    class MissionConstructionException : Exception
-    {
+namespace DMG {
+    public class MissionConstructionException : Exception {
         public MissionConstructionException(string message) : base(message) { }
     }
 }
 
-namespace DMG.Parser
-{
-    class LexerException : Exception
-    {
+namespace DMG.Parser {
+    public class LexerException : Exception {
         public RawToken Token { get; }
 
-        public LexerException(RawToken token, string message) : base(message + $" ({token})")
-        {
+        public LexerException(RawToken token, string message) : base(message + $" ({token})") {
             Token = token;
         }
     }
-    class ParseException : Exception
-    {
+    public class ParseException : Exception {
         public Token Token { get; }
 
-        public ParseException(Token token, string message) : base(message + (token != null ? $" (line {token.LineNumber}) ({token})" : ""))
-        {
+        public ParseException(Token token, string message) : base(message + (token != null ? $" (line {token.LineNumber}) ({token})" : "")) {
             Token = token;
         }
     }
 }
 
-namespace DMG.Parser.Validation
-{
-    class ValidationException : Exception
-    {
+namespace DMG.Parser.Validation {
+    public class ValidationException : Exception {
         public ValidationException(string message) : base(message) { }
     }
 }

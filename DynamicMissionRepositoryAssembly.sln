@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicMissionRepositoryAssembly", "DynamicMissionRepositoryAssembly.csproj", "{EE910200-B0FD-41D3-95A1-628CDBA157B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicMissionRepositoryAssembly", "DynamicMissionRepositoryAssembly.csproj", "{C0261E15-AE35-44A6-98BE-E98A7541B362}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMGTests", "DMGTests\DMGTests.csproj", "{50ECD7DF-178A-40B2-BFB2-8292AD70AC4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EE910200-B0FD-41D3-95A1-628CDBA157B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EE910200-B0FD-41D3-95A1-628CDBA157B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EE910200-B0FD-41D3-95A1-628CDBA157B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EE910200-B0FD-41D3-95A1-628CDBA157B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0261E15-AE35-44A6-98BE-E98A7541B362}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0261E15-AE35-44A6-98BE-E98A7541B362}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0261E15-AE35-44A6-98BE-E98A7541B362}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0261E15-AE35-44A6-98BE-E98A7541B362}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50ECD7DF-178A-40B2-BFB2-8292AD70AC4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50ECD7DF-178A-40B2-BFB2-8292AD70AC4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50ECD7DF-178A-40B2-BFB2-8292AD70AC4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50ECD7DF-178A-40B2-BFB2-8292AD70AC4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

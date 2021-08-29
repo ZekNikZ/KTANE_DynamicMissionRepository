@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 using UnityEngine;
 
-namespace DMG
-{
-    class GeneratorSettingProxy
-    {
+namespace DMG {
+    public class GeneratorSettingProxy {
         public float? TimeLimit;
         public int? NumStrikes;
         public int? TimeBeforeNeedyActivation;
@@ -16,10 +12,8 @@ namespace DMG
         public int? OptionalWidgetCount;
         public List<KMComponentPool> ComponentPools = new List<KMComponentPool>();
 
-        public KMGeneratorSetting Generate()
-        {
-            return new KMGeneratorSetting()
-            {
+        public KMGeneratorSetting Generate() {
+            return new KMGeneratorSetting() {
                 TimeLimit = TimeLimit ?? 300,
                 NumStrikes = NumStrikes ?? 3,
                 TimeBeforeNeedyActivation = TimeBeforeNeedyActivation ?? 30,
@@ -30,21 +24,17 @@ namespace DMG
         }
     }
 
-    class MissionProxy
-    {
+    public class MissionProxy {
         public string DisplayName;
         public string Description;
         public GeneratorSettingProxy DefaultBomb = new GeneratorSettingProxy();
         public List<GeneratorSettingProxy> Bombs;
         public bool? PacingEventsEnabled;
-        public string FactoryMode;
+        public int? FactoryMode;
 
-        public void AddBomb(GeneratorSettingProxy bomb, int count = 1)
-        {
-            for (int i = 0; i < count; i++)
-            {
-                Bombs.Add(new GeneratorSettingProxy()
-                {
+        public void AddBomb(GeneratorSettingProxy bomb, int count = 1) {
+            for (int i = 0; i < count; i++) {
+                Bombs.Add(new GeneratorSettingProxy() {
                     TimeLimit = bomb.TimeLimit ?? DefaultBomb.TimeLimit,
                     NumStrikes = bomb.NumStrikes ?? DefaultBomb.NumStrikes,
                     TimeBeforeNeedyActivation = bomb.TimeBeforeNeedyActivation ?? DefaultBomb.TimeBeforeNeedyActivation,
@@ -55,15 +45,13 @@ namespace DMG
             }
         }
 
-        public KMMission Generate()
-        {
+        public KMMission Generate() {
             var instance = ScriptableObject.CreateInstance<KMMission>();
             instance.DisplayName = DisplayName ?? "Dynamic Mission";
             instance.Description = Description ?? "This is a dynamically-generated mission";
             instance.PacingEventsEnabled = PacingEventsEnabled ?? true;
 
-            // Create bombs
-
+            // TODO: Create bombs
 
             return instance;
         }

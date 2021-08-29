@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace DMG.Parser
-{
-    enum TokenType
-    {
+﻿namespace DMG.Parser {
+    public enum TokenType {
         OP_REPEAT,
         OP_VALUE_ASSIGNMENT,
         OP_ITEM_SEPARATOR,
@@ -23,8 +16,7 @@ namespace DMG.Parser
         COMMENT_MULTILINE
     }
 
-    class Token
-    {
+    public class Token {
         public TokenType TokenType { get; }
 
         public int LineNumber { get; }
@@ -45,8 +37,7 @@ namespace DMG.Parser
 
         public Token(TokenType type, int lineNumber, float value) : this(type, lineNumber, null, null, value) { }
 
-        private Token(TokenType type, int lineNumber, string stringValue, int? intValue, float? floatValue)
-        {
+        private Token(TokenType type, int lineNumber, string stringValue, int? intValue, float? floatValue) {
             TokenType = type;
             LineNumber = lineNumber;
             StringValue = stringValue;
@@ -54,22 +45,14 @@ namespace DMG.Parser
             FloatValue = floatValue;
         }
 
-        public override string ToString()
-        {
-            if (StringValue != null)
-            {
+        public override string ToString() {
+            if (StringValue != null) {
                 return $"Token{{ Type = {TokenType}, LineNumber = {LineNumber}, StringValue = '{StringValue}' }}";
-            }
-            else if (IntValue != null)
-            {
+            } else if (IntValue != null) {
                 return $"Token{{ Type = {TokenType}, LineNumber = {LineNumber}, IntValue = {IntValue} }}";
-            }
-            else if (FloatValue != null)
-            {
+            } else if (FloatValue != null) {
                 return $"Token{{ Type = {TokenType}, LineNumber = {LineNumber}, FloatValue = {FloatValue} }}";
-            }
-            else
-            {
+            } else {
                 return $"Token{{ Type = {TokenType}, LineNumber = {LineNumber} }}";
             }
         }

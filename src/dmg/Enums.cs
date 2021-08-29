@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DMG
-{
-    class EnumCosntants
-    {
+namespace DMG {
+    public static class EnumConstants {
         private static readonly Dictionary<FactoryMode, string> FactoryModeNames = new Dictionary<FactoryMode, string>()
         {
             { FactoryMode.STATIC, "Factory: Static" },
@@ -30,8 +28,7 @@ namespace DMG
         };
     }
 
-    enum FactoryMode
-    {
+    public enum FactoryMode {
         STATIC,
         FINITE,
         FINITE_GLOBAL_TIME,
@@ -43,8 +40,7 @@ namespace DMG
         INFINITE_GLOBAL_TIME_STRIKES
     }
 
-    public enum Mode
-    {
+    public enum Mode {
         NORMAL,
         TIME,
         ZEN,
